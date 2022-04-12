@@ -18,10 +18,12 @@ To reproduce results:
 - Download outdata_roads, unzip
 - CBSA statistics requires stats_cbsa.py
 - Patch statistics within CBSA requires stats_patch.py
+- node-level statistics are within stats_coordinate.py
 - change directory path in each file to appropriate directory path to extract outdata_roads shapefiles
 
 
-Data will be stored in CityStats and CityPatchStats for CBSAs and patches, respectively. Example files are within each folder so researchers can see the output
+Data will be stored in CityStats and CityPatchStats for CBSAs and patches, respectively. Example files are within each folder so researchers can see the output. 
+
 Output:
 
 - msaid: CBSA code 
