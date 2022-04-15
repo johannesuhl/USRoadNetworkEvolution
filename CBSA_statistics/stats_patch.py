@@ -107,7 +107,7 @@ def total_dist(file,artificial_deadends,ID):
 
 def node_longlat(G,city_id,year):
     wgs84_proj4string = '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs'  ###definition of lat lon coordinate system (wgs84)
-    geodf = gp.GeoDataFrame.from_file('/Volumes/Keith Network Hard Drive/RoadNetworks/outdata_roads/roads_'+str(city_id)+'_1000_005_'+str(year)+'.shp') ##read shapefile
+    geodf = gp.GeoDataFrame.from_file('roads_'+str(city_id)+'_1000_005_'+str(year)+'.shp') ##read shapefile
     geodf_nodes=gp.GeoDataFrame(geometry=[Point(xy) for xy in G.nodes])
     geodf_nodes = geodf_nodes.set_crs(':'.join(geodf.crs.to_authority()))
     #geodf_nodes=geodf_nodes.loc[geodf_nodes.geometry.geom_type!='LineString',]
@@ -172,7 +172,7 @@ def save_network(G,city_id,ID,year):
 files=glob('network_stats/NetworkStatistics_ChangeInNetwork_*')
 # collect year, population, distance
 completeness=pd.read_csv('network_stats/MSA_UNC_STATS.csv')
-directory='/Volumes/Keith Network Hard Drive/RoadNetworks/outdata_roads/'
+directory='outdata_roads/'
 df_households_year = pd.read_csv('network_stats/segment_stats_overall.csv')
 df_all_households_year = pd.read_csv('network_stats/MSA_BUPR_BUPL_BUA_STATS.csv')
 bin_width = 2*np.pi/60
@@ -180,7 +180,7 @@ polar_bins = np.arange(0,2*np.pi,bin_width)
 MeanBins=np.array([np.mean(polar_bins[i:i+1]) for i in range(len(polar_bins)-1)])
 house_stats=[]
 temp_thresh = -1#60 # threshold for temporal completeness
-geo_thresh=-1#40 # threshold for geographi coverage
+geo_thresh=-1#40 # threshold for geographic coverage
 city_ids=[]
 for file in files:
     if '_CityID=' in file and ',' not in file:
