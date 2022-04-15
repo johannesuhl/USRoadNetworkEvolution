@@ -7,7 +7,8 @@ The tools are based on the integration of historical settlement layers from the 
 All code written by Keith Burghardt and Johannes H. Uhl.
 
 
-References:
+## References:
+
 Burghardt, K., Uhl, J., Lerman, K., & Leyk, S. (2021). Road Network Evolution in the Urban and Rural United States Since 1900. Computers, Environment and Urban Systems. [https://arxiv.org/abs/2108.13407](https://arxiv.org/abs/2108.13407)
 
 Leyk, S., & Uhl, J. H. (2018). HISDAC-US, historical settlement data compilation for the conterminous United States over 200 years. Scientific data, 5(1), 1-14. DOI: [https://doi.org/10.1038/sdata.2018.175](https://doi.org/10.1038/sdata.2018.175)
