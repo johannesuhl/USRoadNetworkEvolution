@@ -31,7 +31,7 @@ rasterize_edge_stats=True ### will create gridded surfaces from the edge-level s
 
 ### folder / filename for edge and node-level statistics
 infolder_nodestats = '' ### the folder containing the output from script "../CBSA_statistics/stats_coordinate.py"
-incsv_edgestats='Distances_per_road.csv'
+incsv_edgestats='Distances_per_road.csv' ### output from the script ../CBSA_statistics/dist_per_road.py
 
 ### the road network statistics to be computed (name of the statistic, will be used in output filename, 
 ### and the actual function used to create the statistic with scipy.stats.binned_statistic_2d()
@@ -45,8 +45,8 @@ stats.append(['meangriddedness',np.nanmean])
 ### folder for output GeoTIFF files
 surface_folder = './surfaces'  
 
-### template grid: the settlement age surface available from the figshare data repository (URL)
-template_raster = './surfaces/gridcell_stats_firstbuiltup_1km_all_cbsas.tif'
+### template grid: the settlement age surface available from the figshare data repository.
+template_raster = './surfaces/gridcell_stats_firstbuiltup_1km_all_cbsas.tif' ### (get it from https://figshare.com/projects/USRoadNetworkEvolution/137044)
  
 ### some specs for the output GeoTIFFs
 bitdepth = gdal.GDT_Float32   
