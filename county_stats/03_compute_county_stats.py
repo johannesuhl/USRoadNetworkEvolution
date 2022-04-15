@@ -2,7 +2,7 @@
 """
 Created on Sun Nov 25 10:58:05 2018
 
-@author: Johannes
+@author: Johannes H. Uhl, University of Colorado Boulder, USA.
 """
 
 import pandas as pd
