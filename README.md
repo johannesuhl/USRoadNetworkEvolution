@@ -13,6 +13,9 @@ There are different levels of spatial reference units at which (historical) road
 
 All code written by Keith Burghardt and Johannes H. Uhl.
 
+Example of the road network statistics + settlement age within 1kmx1km grid cells, shown for the Greater Denver area (Colorado):
+<img width="1000" src="https://github.com/johannesuhl/USRoadNetworkEvolution/blob/main/road_network_stats_gridded_viz.jpg">
+
 
 ## References:
 
