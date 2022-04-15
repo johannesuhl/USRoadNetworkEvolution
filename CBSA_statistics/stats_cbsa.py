@@ -60,7 +60,7 @@ def create_bearing(G):
 
 def node_longlat(G,city_id,year):
     wgs84_proj4string = '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs'  ###definition of lat lon coordinate system (wgs84)
-    geodf = gp.GeoDataFrame.from_file('/Volumes/Keith Network Hard Drive/RoadNetworks/outdata_roads/roads_'+city_id+'_1000_005_'+str(year)+'.shp') ##read shapefile
+    geodf = gp.GeoDataFrame.from_file('roads_'+city_id+'_1000_005_'+str(year)+'.shp') ##read shapefile
     geodf_nodes=gp.GeoDataFrame(geometry=[Point(xy) for xy in G.nodes])
     geodf_nodes = geodf_nodes.set_crs(':'.join(geodf.crs.to_authority()))
     xvals =  geodf_nodes.geometry.x.values ###access coordinates
@@ -198,13 +198,13 @@ for n,row in city_names.iterrows():
         if year == 2015:
             year_col = 'POPESTIMATE2015'
         # network statistics
-        city_file = '/Volumes/Keith Network Hard Drive/RoadNetworks/outdata_roads/roads_'+city_id+'_1000_005_'+str(year)+'.shp'
+        city_file = 'roads_'+city_id+'_1000_005_'+str(year)+'.shp'
         old_year = year -10
         if year == 2015:
             old_year = year-5
         if second_century:
             old_year=1950
-        old_city_file = '/Volumes/Keith Network Hard Drive/RoadNetworks/outdata_roads/roads_'+city_id+'_1000_005_'+str(old_year)+'.shp'
+        old_city_file = 'roads_'+city_id+'_1000_005_'+str(old_year)+'.shp'
         if os.path.exists(city_file):
             pop = MSAs.loc[MSAs['CBSA']==int(city_id),year_col].values[0]
             total_patch_houses_r = 0 # BUPR sum of houses
@@ -227,7 +227,7 @@ for n,row in city_names.iterrows():
 
 
             G = nx.read_shp(city_file,geom_attrs=True)
-            deadends_file = '/Volumes/Keith Network Hard Drive/RoadNetworks/outdata_roads/roads_'+city_id+'_1000_005_'+str(year)+'_artific_deadends.shp'
+            deadends_file = 'roads_'+city_id+'_1000_005_'+str(year)+'_artific_deadends.shp'
             end_nodes = set([])
             if os.path.exists(deadends_file):
                 Gend = nx.read_shp(deadends_file)
