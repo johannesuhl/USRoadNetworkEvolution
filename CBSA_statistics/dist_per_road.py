@@ -23,7 +23,7 @@ from sklearn.neighbors import KernelDensity
 
 def node_longlat(G):
     wgs84_proj4string = '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs'  ###definition of lat lon coordinate system (wgs84)
-    geodf = gp.GeoDataFrame.from_file('/Volumes/Keith Network Hard Drive/RoadNetworks/outdata_roads/roads_'+city_id+'_1000_005_'+str(year)+'.shp') ##read shapefile
+    geodf = gp.GeoDataFrame.from_file('roads_'+city_id+'_1000_005_'+str(year)+'.shp') ##read shapefile
     #print(type(geodf.crs))
     geodf_nodes=gp.GeoDataFrame(geometry=[Point(xy) for xy in G.nodes])
     geodf_nodes = geodf_nodes.set_crs(':'.join(geodf.crs.to_authority()))
@@ -72,7 +72,7 @@ def dist_per_coord(file,artificial_deadends,city_id):
 city_ids_house_stats = pd.read_csv('network_stats/segment_stats_ALL_incl_bui.csv')[['msaid']].drop_duplicates().values.flatten()
 
 years =  list(range(1900,2011,10))+[2015]
-directory='/Volumes/Keith Network Hard Drive/RoadNetworks/outdata_roads/'
+directory='outdata_roads/'
 
 all_dfs_list=[]
 for ii,city_id in enumerate(city_ids_house_stats):
