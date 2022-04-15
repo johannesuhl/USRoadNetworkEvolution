@@ -11,6 +11,8 @@ There are different levels of spatial reference units at which (historical) road
 - For each contiguous patch of built-up area within a CBSA, per time period: [./CBSA_statistics/stats_patch.py](https://github.com/johannesuhl/USRoadNetworkEvolution/blob/main/CBSA_statistics/stats_patch.py).
 - For each 1kmx1km grid cell, within CBSA boundaries: [road_network_stats_gridded.py](https://github.com/johannesuhl/USRoadNetworkEvolution/blob/main/road_network_stats_gridded.py).
 
+The script [./CBSA_statistics/stats_cbsa.py](https://github.com/johannesuhl/USRoadNetworkEvolution/blob/main/CBSA_statistics/stats_cbsa.py) requires [Historical, generalized built-up areas in U.S. core-based statistical areas (1900 - 2015)] (https://doi.org/10.6084/m9.figshare.19593409), which can be reproduced with the script [model_historical_roadnetwork_cbsa.py] (https://github.com/johannesuhl/USRoadNetworkEvolution/blob/main/model_historical_roadnetwork_cbsa.py).
+
 All code written by Keith Burghardt and Johannes H. Uhl.
 
 Example of the road network statistics + settlement age within 1kmx1km grid cells, shown for the Greater Denver area (Colorado):
