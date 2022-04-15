@@ -56,7 +56,7 @@ def create_node_bearing(G,node):
 
 def node_longlat(G):
     wgs84_proj4string = '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs'  ###definition of lat lon coordinate system (wgs84)
-    geodf = gp.GeoDataFrame.from_file('/Volumes/Keith Network Hard Drive/RoadNetworks/outdata_roads/roads_'+city_id+'_1000_005_'+str(year)+'.shp') ##read shapefile
+    geodf = gp.GeoDataFrame.from_file('roads_'+city_id+'_1000_005_'+str(year)+'.shp') ##read shapefile
     geodf_nodes=gp.GeoDataFrame(geometry=[Point(xy) for xy in G.nodes])
     geodf_nodes = geodf_nodes.set_crs(':'.join(geodf.crs.to_authority()))
     #geodf_nodes=geodf_nodes.loc[geodf_nodes.geometry.geom_type!='LineString',]
