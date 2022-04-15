@@ -2,7 +2,7 @@
 """
 Created on Sun Aug 02 02:47:19 2020
 
-@author: Johannes
+@author: Johannes H. Uhl, University of Colorado Boulder, USA.
 """
 ############################################################################################
 import time
@@ -10,27 +10,27 @@ import subprocess
 import os,sys
 import numpy as np
 import pandas as pd
-############################################################################################
+# paths ###########################################################################################
 roads_gdb_dir = r'H:\NAT_TRANSP_DATA' ### NTD road network data (state-level GDBs)
 tempfolder = r'F:\URBAN_SCALING_ROADNETWORKS_USC\temp'
 tempgdb= r'F:\URBAN_SCALING_ROADNETWORKS_USC\temp\tempdata.gdb'
 outfolder = r'F:\URBAN_SCALING_ROADNETWORKS_USC\outdata_spatial' ### dir for generalized built-up area shapefiles.
 roads_output_dir=r'H:\outdata_roads' ### dir for road network shapefiles
-############################################################################################
+# auxiliary data ###########################################################################################
 msa_shp=r'./auxiliary_data/tl_2019_us_cbsa.shp'
 fipscsv='./auxiliary_data/STATE_FIPS_LOOKUP.csv'
 county_msa_pop_csv='./auxiliary_data/historical_pop_per_county_cbsa.csv'
-############################################################################################
+# gridded HISDAC-US settlement surfaces ###########################################################################################
 fbuy=r'X:\DIR\TO\HISDAC-US\FBUY.tif' #https://doi.org/10.7910/DVN/PKJ90M
 bupr_dummy=r'X:\DIR\TO\HISDAC-US\BUPR\BUPR_XXXX.tif' #https://doi.org/10.7910/DVN/YSWMDR
 bupl_dummy=r'X:\DIR\TO\HISDAC-US\BUPR\BUPL_XXXX.tif' #https://doi.org/10.7910/DVN/SJ213V
 bua_dummy=r'X:\DIR\TO\HISDAC-US\BUA\BUA_XXXX.tif' #https://doi.org/10.7910/DVN/J6CYUJ
 bui_dummy=r'X:\DIR\TO\HISDAC-US\BUI\BUI_XXXX.tif' #https://doi.org/10.7910/DVN/1WB9E4
-############################################################################################
+# parameters ###########################################################################################
 years = list(np.arange(1900,2011,10))+[2015]
-radii=[1000]  #in m
-tresholds=[0.05]
-############################################################################################
+radii=[1000]  #radius in  m of the focal window ih which built-up surface density is calculated.
+tresholds=[0.05] # threshold to be used to binarize the focal density surface.
+# control variables ###########################################################################################
 extract_historical_roads = True ## requires ArcPy and FME! (call "C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\propy" <scriptname>
 merge_patches = True ## requires geopandas, requires extract_historical_roads to run prior to that.
 ############################################################################################
