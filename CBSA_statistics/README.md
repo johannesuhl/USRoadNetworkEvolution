@@ -18,7 +18,8 @@ To reproduce results:
 - Download outdata_roads, unzip
 - CBSA statistics requires stats_cbsa.py
 - Patch statistics within CBSA requires stats_patch.py
-- node-level statistics are within stats_coordinate.py
+- Node-level statistics are within stats_coordinate.py
+- Length of each road are within dist_per_road.py
 - change directory path in each file to appropriate directory path to extract outdata_roads shapefiles
 
 
@@ -47,3 +48,8 @@ Output:
 - mean_local_gridness: Griddedness used in text
 - mean_local_gridness_max: Same as griddedness used in text but assumes we can have up to 3 quadrilaterals for degree 3 (maximum possible, although intersections will not necessarily create right angles)
 
+For dist_per_road.py output:
+- msaid: CBSA code 
+- mean_long: Mean longitude of road segment
+- mean_lat: Mean latitude of road segment
+- dist_km: Distance of road segment in km
