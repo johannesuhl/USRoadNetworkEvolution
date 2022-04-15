@@ -248,6 +248,5 @@ outcols.append('avg_patchsize')
 outcols.append('numpatches')							
 
 outdf.columns = outcols
-outdf.to_csv(infolder+os.sep+'000_county_stats_ALL_V5_2021.csv',index=False)
 outdf_clean = outdf[~outdf.isin(['nan']).any(axis=1)]
 outdf_clean.to_csv(infolder+os.sep+'us_county_multitemporal_road_network_stats_1810-2015.csv',index=False)
