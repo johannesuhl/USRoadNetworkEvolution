@@ -7,7 +7,7 @@ The tools are based on the integration of historical settlement layers, availabl
 There are different levels of spatial reference units at which (historical) road network statistics are extracted:
 
 - For each core-based statistical area (i.e., metropolitan areas + micropolitan areas), per time period.
-- For each county, per time period.
+- For each county, per time period [./county_stats/](https://github.com/johannesuhl/USRoadNetworkEvolution/tree/main/county_stats)
 - For each contiguous patch of built-up area within a CBSA, per time period.
 - For each 1kmx1km grid cell, within CBSA boundaries: [road_network_stats_gridded.py](https://github.com/johannesuhl/USRoadNetworkEvolution/blob/main/road_network_stats_gridded.py)
 
