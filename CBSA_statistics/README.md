@@ -12,6 +12,7 @@ Code written by Keith Burghardt, (c) 2022.
 - GeoPy
 - Shapely
 - SciPy
+
 (Latest versions as of Jan. 1, 2022)
 
 To reproduce results: 
